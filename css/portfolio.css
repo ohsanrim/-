@@ -1,0 +1,214 @@
+html, body { width: 100%; height: 100%; overflow: hidden; }
+
+h1, a { font-family: 'Black Han Sans', sans-serif; }
+
+h1 { cursor: default; }
+
+a { cursor: pointer; }
+
+span, p { font-family: 'Noto Sans KR', sans-serif; cursor: default; }
+
+.wrap { max-width: 1500px; margin: 0 auto; }
+
+.section { position: relative; width: 100%; height: 100vh; }
+
+.height_wrap { position: absolute; width: 100%; height: 700px; top: calc(50% - 350px); }
+
+nav { position: fixed; color: #c4bdc5; font-family: 'LotteMartDream'; font-size: 16px; text-align: right; right: 40px; top: 40px; font-weight: 300; z-index: 10; display: none; }
+nav ol li { margin-bottom: 10px; cursor: pointer; }
+nav ol li.pos { font-weight: 400; color: #7d6f7c; }
+
+aside { position: fixed; width: 50px; height: 50px; right: 40px; bottom: 40px; cursor: pointer; z-index: 99; }
+aside #bar_aside { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s; }
+aside #bar_aside.op { opacity: 1; }
+aside .arrow { position: absolute; width: 100%; height: 100%; transition: transform 1s; }
+aside .arrow img { width: 100%; height: 100%; }
+aside .arrow.rotate { transform: rotate(-180deg); }
+
+.main { position: relative; background-color: #c5cae9; }
+.main .box { position: absolute; height: auto; width: auto; right: 200px; bottom: 200px; background-color: rgba(0, 0, 0, 0.8); }
+.main .box * { position: absolute; right: 0; bottom: 0; font-family: 'Black Han Sans', sans-serif; }
+.main .box span { width: 401px; right: 285px; bottom: 290px; font-size: 50px; color: rgba(148, 153, 183, 0.8); text-shadow: -1px -1px 5px #e9d8e8, 0 0 0 #54255f; text-align: right; }
+.main .box p { bottom: 1px; font-size: 150px; color: #fff; text-shadow: -5px -5px 3px rgba(215, 204, 215, 0.5); }
+.main .box p:nth-of-type(1) { right: 270px; }
+.main .box p:nth-of-type(2) { right: 200px; }
+.main .box p:nth-of-type(3) { right: 120px; }
+.main .box p:nth-of-type(4) { right: 90px; }
+.main .box p:nth-of-type(5) { right: 0; }
+.main .box img:nth-of-type(1) { bottom: 30px; right: 120px; }
+.main .box img:nth-of-type(2) { bottom: 0; right: 70px; }
+
+.about h1 { font-size: 36px; color: #54255f; letter-spacing: -1px; line-height: 50px; }
+.about span { font-size: 18px; font-weight: 400; color: #7d6f7c; line-height: 40px; }
+.about .info { position: absolute; }
+.about .info:nth-child(1) { left: 0; bottom: 200px; background-color: #e9d8e8; }
+.about .info:nth-child(2) { left: 0; bottom: 0; }
+.about .info:nth-child(3) { right: 0; bottom: 200px; text-align: right; }
+.about .info:nth-child(3) .skills_bar { width: 280px; height: 160px; }
+.about .info:nth-child(3) .skills_bar li { float: left; }
+.about .info:nth-child(3) .skills_bar li:nth-child(1), .about .info:nth-child(3) .skills_bar li:nth-child(2) { margin-bottom: 40px; }
+.about .info:nth-child(3) .skills_bar li:nth-child(odd) { margin-right: 40px; }
+.about .info:nth-child(3) .skills_bar li .bar { width: 120px; height: 60px; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; font-weight: 300; cursor: default; }
+.about .info:nth-child(4) { right: 0; bottom: 0; text-align: right; }
+.about .info:nth-child(4) span { display: inline-block; }
+.about .info:nth-child(4) span:last-child { font-weight: 300; }
+
+.web_wrap { position: absolute; width: 100%; height: 700px; top: calc(50% - 350px); background-color: #fff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+.web_wrap .mockup { position: relative; width: calc(100% - 500px); height: 100%; float: left; }
+.web_wrap .mockup li { position: absolute; width: 100%; height: 100%; top: 0; right: 0; overflow: hidden; transition: all 1s; }
+.web_wrap .mockup li > img { position: absolute; width: auto; height: auto; top: 50%; right: 500px; transform: translate(50%, -50%); transition: all .3s; }
+.web_wrap .mockup li a { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; color: #fff; background-color: rgba(0, 0, 0, 0.25); transition: all .3s; }
+.web_wrap .mockup li a img { position: absolute; width: 50px; height: 50px; top: 50%; right: 500px; transform: translate(50%, -50%); }
+.web_wrap .mockup li:hover > img { transform: translate(50%, -50%) scale(1.1); }
+.web_wrap .mockup li:hover a { opacity: 1; }
+.web_wrap .mockup li:not(:first-child) { width: 0; }
+.web_wrap .mockup li.select { width: 100%; }
+.web_wrap .txt { position: relative; width: 500px; height: 100%; float: left; padding-right: 30px; box-sizing: border-box; text-align: right; overflow: hidden; }
+.web_wrap .txt li { position: absolute; right: 30px; }
+.web_wrap .txt li * { position: relative; }
+.web_wrap .txt li > p:nth-of-type(1) { top: 120px; font-family: 'LotteMartDream'; font-size: 16px; font-weight: 300; color: #aaa; }
+.web_wrap .txt li a { top: 165px; display: inline-block; font-size: 90px; color: #2a2a2a; letter-spacing: -4px; }
+.web_wrap .txt li > p:nth-of-type(2) { top: 200px; font-size: 15px; font-weight: 300; line-height: 23px; color: #555; }
+.web_wrap .txt li:not(:first-child) { display: none; }
+.web_wrap #link_guide { position: absolute; width: 70px; height: 21px; right: 30px; bottom: 100px; }
+.web_wrap #link_guide li { position: absolute; width: 100%; height: 100%; cursor: pointer; overflow: hidden; }
+.web_wrap #link_guide li p { position: absolute; right: 80px; line-height: 21px; color: #555; cursor: pointer; transition: all .4s ease-out; }
+.web_wrap #link_guide li img { position: absolute; left: 0; cursor: pointer; transition: all .4s ease-out; }
+.web_wrap #link_guide li:hover p { right: 10px; }
+.web_wrap #link_guide li:hover img { left: 100%; }
+.web_wrap #link_guide li:not(:first-child) { display: none; }
+
+.design_wrap { position: absolute; width: 100%; height: 700px; top: calc(50% - 350px); display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; justify-content: space-between; }
+.design_wrap li { width: 31%; height: 100%; background-color: #fff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+.design_wrap li:nth-child(1) .mockup { background: url(../images/mockup_mc.jpg) center center no-repeat; }
+.design_wrap li:nth-child(2) .mockup { background: url(../images/mockup_wedding.jpg) center center no-repeat; }
+.design_wrap li:nth-child(3) .mockup { background: url(../images/mockup_info.jpg) center center no-repeat; }
+.design_wrap li .mockup { position: relative; width: 100%; height: 65%; float: left; overflow: hidden; background-size: 100% !important; transition: all .3s; }
+.design_wrap li .mockup a { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; text-align: center; line-height: 700px; color: #fff; background-color: rgba(0, 0, 0, 0.3); transition: all .3s; }
+.design_wrap li .mockup a img { position: absolute; width: 60px; height: 60px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.design_wrap li .mockup:hover { background-size: 110% !important; }
+.design_wrap li .mockup:hover a { opacity: 1; }
+.design_wrap li .txt { position: relative; width: 100%; height: 35%; float: left; text-align: center; }
+.design_wrap li .txt > p:nth-of-type(1) { font-family: 'LotteMartDream'; font-size: 13px; font-weight: 400; color: #555; margin-top: 10%; }
+.design_wrap li .txt a { display: inline-block; font-size: 44px; letter-spacing: -2px; margin-top: 5%; }
+.design_wrap li .txt .link_guide { position: absolute; width: 40px; height: 15px; left: calc(50% - 20px); bottom: 20%; overflow: hidden; cursor: pointer; }
+.design_wrap li .txt .link_guide p { position: absolute; right: 41px; line-height: 15px; font-size: 14px; color: #555; cursor: pointer; transition: all .5s; }
+.design_wrap li .txt .link_guide img { position: absolute; width: 100%; height: 100%; left: 0; cursor: pointer; transition: all .5s; }
+.design_wrap li .txt .link_guide:hover p { right: 1px; }
+.design_wrap li .txt .link_guide:hover img { left: 100%; }
+
+.guide { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 99; background-color: rgba(0, 0, 0, 0.5); cursor: pointer; display: none; }
+.guide li { position: absolute; width: 1217px; height: 800px; top: 50%; left: 50%; z-index: 100; transform: translate(-50%, -50%); background-color: #fff; overflow: auto; cursor: default; display: none; }
+.guide li p, .guide li a { color: #fff; }
+.guide li .guide_title { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.guide li .guide_title > img { position: absolute; top: 100px; left: 100px; box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.15); }
+.guide li .guide_title .txt { position: absolute; width: 450px; height: 700px; top: 100px; right: 100px; padding-right: 0; }
+.guide li .guide_title .txt > p { width: 100%; text-align: left; }
+.guide li .guide_title .txt > p:nth-of-type(1) { font-size: 24px; font-weight: 300; letter-spacing: -1px; margin-top: 50px; }
+.guide li .guide_title .txt > p:nth-of-type(2) { font-family: 'yg-jalnan'; font-size: 70px; margin-top: 20px; }
+.guide li .guide_title .txt > p:nth-of-type(3) { font-weight: 100; line-height: 26px; margin-top: 30px; }
+.guide li .guide_title .txt .line { width: 100%; height: 1px; background-color: #fff; margin-top: 30px; }
+.guide li .guide_title .txt a { position: absolute; width: 190px; height: 25px; top: 480px; right: 0; font-size: 18px; line-height: 25px; font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; transition: all .4s ease-out; text-align: left; }
+.guide li .guide_title .txt a:hover { padding-left: 10px; }
+.guide li .guide_title .txt a img { position: absolute; right: 0; top: 0; }
+.guide li .guide_title .txt .who, .guide li .guide_title .txt .what { position: absolute; width: 160px; top: 560px; }
+.guide li .guide_title .txt .who p, .guide li .guide_title .txt .what p { position: absolute; line-height: 30px; letter-spacing: 0.2px; }
+.guide li .guide_title .txt .who p:nth-child(1), .guide li .guide_title .txt .what p:nth-child(1) { left: 0; font-weight: 300; }
+.guide li .guide_title .txt .who p:nth-child(2), .guide li .guide_title .txt .what p:nth-child(2) { right: 0; text-align: right; font-weight: 500; }
+.guide li .guide_title .txt .who { left: 0; }
+.guide li .guide_title .txt .what { right: 0; }
+.guide li > img { width: 100%; height: auto; }
+.guide li .footer { width: 100%; height: 100px; font-size: 18px; font-weight: 600; text-align: center; line-height: 100px; color: #fff; }
+.guide li .close { position: absolute; width: 50px; height: 50px; top: 50px; right: 50px; transform: translate(50%, -50%) rotate(-45deg); cursor: pointer; transition: all .4s ease-out; }
+.guide li .close:hover { transform: translate(50%, -50%) rotate(45deg); }
+.guide li .close div { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; }
+.guide li .close div:nth-child(1) { width: 100%; height: 2px; }
+.guide li .close div:nth-child(2) { width: 2px; height: 100%; }
+.guide li:nth-child(1) .guide_title { background-color: #fbcdc9; }
+.guide li:nth-child(1) .footer { background-color: #fbcdc9; }
+.guide li:nth-child(2) .guide_title { background: linear-gradient(120deg, #fd6ceb 0%, #55d6f7 100%); }
+.guide li:nth-child(2) .footer { background: linear-gradient(90deg, #f06ec4 0%, #0f92fe 100%); }
+.guide li:nth-child(3) .guide_title { background-color: #fed84b; }
+.guide li:nth-child(3) .footer { background-color: #fed84b; }
+.guide li:nth-child(4) .guide_title { background-color: #f7ba59; }
+.guide li:nth-child(4) .guide_title .txt .what { width: 100%; }
+.guide li:nth-child(4) .guide_title .txt .what p:nth-child(1) { text-align: left; }
+.guide li:nth-child(4) .footer { background-color: #f7ba59; }
+
+.orig { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 99; background-color: rgba(0, 0, 0, 0.5); cursor: pointer; display: none; z-index: 99; }
+.orig li { position: absolute; width: 800px; height: 800px; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; z-index: 100; }
+
+.contact h1 { position: absolute; top: 0; left: 0; color: rgba(84, 37, 95, 0.8); text-shadow: -1px -1px 5px rgba(255, 255, 255, 0.4), 0 0 0 #2a2a2a; font-size: 90px; }
+.contact .address { position: absolute; width: 500px; height: 200px; left: 0; bottom: 0; }
+.contact .address li { position: relative; width: 100%; height: 50%; border-bottom: 1px solid #54255f; box-sizing: border-box; font-family: 'LotteMartDream'; font-size: 18px; }
+.contact .address li > * { position: absolute; bottom: 10px; }
+.contact .address li > *:nth-child(1) { left: 0; font-weight: 300; color: #7d6f7c; }
+.contact .address li > *:nth-child(2) { right: 0; color: #54255f; }
+.contact .address li > p:nth-child(2) { cursor: text; }
+.contact .address li img { width: 80px; height: 80px; }
+.contact img { position: absolute; right: 0; bottom: 0; }
+.contact .copyright { position: absolute; right: 0; top: 100%; font-family: 'LotteMartDream'; font-size: 14px; font-weight: 300; line-height: 30px; color: #c4bdc5; }
+
+@media screen and (max-width: 1280px) { .wrap { width: 100%; height: 100%; }
+  nav { width: 100%; height: 50px; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); }
+  nav li { width: 25%; height: 50px; line-height: 50px; text-align: center; float: left; }
+  aside { width: 40px; height: 40px; bottom: 20px; right: 20px; }
+  .main .box { right: 10vw; bottom: 25vw; }
+  .main .box span { display: none; }
+  .main .box p { bottom: 75px; font-size: 80px; }
+  .main .box p:nth-of-type(1) { right: 195px; }
+  .main .box p:nth-of-type(2) { right: 155px; }
+  .main .box img { width: 130px; }
+  .main .box img:nth-of-type(1) { right: 80px; bottom: 18px; }
+  .main .box img:nth-of-type(2) { right: 45px; }
+  .about h1 { font-size: 28px; letter-spacing: -0.5px; }
+  .about span { font-size: 16px; line-height: 30px; }
+  .about .height_wrap { width: 100%; height: 100%; top: 0; left: 0; }
+  .about .height_wrap .selfie { display: none; }
+  .about .height_wrap .info { right: 30px; }
+  .about .height_wrap .info:nth-child(2) { height: 140px; bottom: 390px; text-align: right; }
+  .about .height_wrap .info:nth-child(3) { bottom: 220px; }
+  .about .height_wrap .info:nth-child(3) .skills_bar { width: 180px; height: 100px; }
+  .about .height_wrap .info:nth-child(3) .skills_bar li:nth-child(1), .about .height_wrap .info:nth-child(3) .skills_bar li:nth-child(2) { margin-bottom: 20px; }
+  .about .height_wrap .info:nth-child(3) .skills_bar li:nth-child(odd) { margin-right: 20px; }
+  .about .height_wrap .info:nth-child(3) .skills_bar li .bar { width: 80px; height: 40px; font-size: 12px; }
+  .about .height_wrap .info:nth-child(4) { bottom: 50px; }
+  .web_wrap { width: 100%; height: 100%; top: 0; background-color: #fff; box-shadow: 0 0 0 0 transparent; }
+  .web_wrap .mockup { position: absolute; width: 100%; height: 100%; }
+  .web_wrap .mockup li img { display: none; }
+  .web_wrap .mockup li a { display: none; }
+  .web_wrap .mockup li:nth-child(1) { background: url(../images/mockup_1.jpg) center center no-repeat; background-size: cover; }
+  .web_wrap .mockup li:nth-child(2) { background: url(../images/mockup_2.jpg) center center no-repeat; background-size: cover; }
+  .web_wrap .mockup li:nth-child(3) { background: url(../images/mockup_3.jpg) center center no-repeat; background-size: cover; }
+  .web_wrap .mockup li:nth-child(4) { background: url(../images/mockup_1.jpg) center center no-repeat; background-size: cover; }
+  .web_wrap .txt { position: absolute; width: 90vw; height: 60vw; bottom: 90px; left: 5vw; background-color: #fff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+  .web_wrap .txt li { width: 100%; height: 100%; top: 0; left: 0; }
+  .web_wrap .txt li * { position: absolute; text-align: center; width: 100%; transform: translateY(-50%); }
+  .web_wrap .txt li > p:nth-of-type(1) { top: 20%; font-size: 16px; font-weight: 300; color: #aaa; }
+  .web_wrap .txt li a { top: 50%; display: block; font-size: 60px; color: #2a2a2a; letter-spacing: -4px; }
+  .web_wrap .txt li > p:nth-of-type(2) { display: none; }
+  .web_wrap #link_guide { width: 60px; height: 18px; left: 50%; bottom: calc(90px + 6vw); transform: translate(-50%, -50%); }
+  .web_wrap #link_guide li img { width: 100%; height: 100%; }
+  .web_wrap #link_guide li:hover p { right: 80px; }
+  .web_wrap #link_guide li:hover img { left: 0; }
+  .design_wrap { width: 90vw; height: 80%; left: 5vw; top: 10%; display: block; }
+  .design_wrap li { width: 100%; height: calc((100% - 10vw)/3); margin-bottom: 5vw; overflow: hidden; }
+  .design_wrap li .mockup { width: 100%; height: 100%; }
+  .design_wrap li .mockup a { display: none; }
+  .design_wrap li .txt { position: absolute; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.5); }
+  .design_wrap li .txt p { display: none; }
+  .design_wrap li .txt a { margin-top: 25%; transform: translateY(-50%); font-size: 40px; color: #2a2a2a; }
+  .design_wrap li .txt .link_guide { display: none; }
+  .contact .height_wrap { width: 100%; height: 100%; top: 0; left: 0; }
+  .contact h1 { display: none; }
+  .contact .address { width: 90vw; height: 160px; left: 5vw; bottom: 90px; }
+  .contact .address li { font-size: 16px; }
+  .contact .address li img { width: 60px; height: 60px; right: 0; bottom: 0 !important; }
+  .contact #socks { display: none; }
+  .contact .copyright { display: none; } }
+@font-face { font-family: 'LotteMartDream'; font-style: normal; font-weight: 400; src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2") format("woff2"), url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff") format("woff"); }
+@font-face { font-family: 'LotteMartDream'; font-style: normal; font-weight: 700; src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2") format("woff2"), url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff") format("woff"); }
+@font-face { font-family: 'LotteMartDream'; font-style: normal; font-weight: 300; src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2") format("woff2"), url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff") format("woff"); }
+@font-face { font-family: 'yg-jalnan'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+/*# sourceMappingURL=portfolio.css.map */
