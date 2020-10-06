@@ -43,12 +43,8 @@ aside .arrow.rotate { transform: rotate(-180deg); }
 .about .info { position: absolute; }
 .about .info:nth-child(1) { left: 0; bottom: 300px; background-color: #e9d8e8; }
 .about .info:nth-child(2) { left: 0; bottom: 0; }
-.about .info:nth-child(3) { right: 0; bottom: 200px; text-align: right; }
-.about .info:nth-child(3) .skills_bar { width: 280px; height: 160px; }
-.about .info:nth-child(3) .skills_bar li { float: left; }
-.about .info:nth-child(3) .skills_bar li:nth-child(1), .about .info:nth-child(3) .skills_bar li:nth-child(2) { margin-bottom: 40px; }
-.about .info:nth-child(3) .skills_bar li:nth-child(odd) { margin-right: 40px; }
-.about .info:nth-child(3) .skills_bar li .bar { width: 120px; height: 60px; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; font-weight: 300; cursor: default; }
+.about .info:nth-child(3) { right: 0; bottom:280px;text-align: right; }
+
 .about .info:nth-child(4) { right: 0; bottom: 0; text-align: right; }
 .about .info:nth-child(4) span { display: inline-block; }
 
@@ -306,4 +302,14 @@ h1 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.frontDiv, .backDiv{
+  height:100px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#frontImg,#backImg{
+  width:80px;
 }

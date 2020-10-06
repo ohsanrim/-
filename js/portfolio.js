@@ -31,54 +31,7 @@ $("document").ready(function(){
         trailWidth: 4,
         trailColor: "#c4bdc5"
     })
-    var bar_htmlcss=new ProgressBar.SemiCircle("#bar_htmlcss",{
-        strokeWidth: 4,
-        easing: "easeInOut",
-        duration: 1000,
-        color: "#754775",
-        trailWidth: 4,
-        trailColor: "#c4bdc5",
-        text: {
-            value: "HTML/CSS",
-            color: "#7d6f7c"
-        }
-    })
-    var bar_jquery=new ProgressBar.SemiCircle("#bar_jquery",{
-        strokeWidth: 4,
-        easing: "easeInOut",
-        duration: 1000,
-        color: "#754775",
-        trailWidth: 4,
-        trailColor: "#c4bdc5",
-        text: {
-            value: "jQuery",
-            color: "#7d6f7c"
-        }
-    })
-    var bar_photoshop=new ProgressBar.SemiCircle("#bar_photoshop",{
-        strokeWidth: 4,
-        easing: "easeInOut",
-        duration: 1000,
-        color: "#754775",
-        trailWidth: 4,
-        trailColor: "#c4bdc5",
-        text: {
-            value: "Photoshop",
-            color: "#7d6f7c"
-        }
-    })
-    var bar_illustrator=new ProgressBar.SemiCircle("#bar_illustrator",{
-        strokeWidth: 4,
-        easing: "easeInOut",
-        duration: 1000,
-        color: "#754775",
-        trailWidth: 4,
-        trailColor: "#c4bdc5",
-        text: {
-            value: "Illustrator",
-            color: "#7d6f7c"
-        }
-    })
+
 
     //RESIZE EVENT
     $(window).resize(function(){
@@ -467,7 +420,7 @@ $("document").ready(function(){
            $(".loading_back").fadeOut();
            $('aside').show();
           /* $('div').removeClass('loading_back');*/
-       }, 3500);
+       }, 3000);
      });
 
 })
