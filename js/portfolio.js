@@ -1,20 +1,28 @@
+$(document).ready(function() {
+
+  // Fakes the loading setting a timeout
+    setTimeout(function() {
+        $('body').addClass('loaded');
+    }, 3500);
+
+});
 $("document").ready(function(){
-    
+
     var height=$(window).height(),
         count=0,
         wc=0,
         pos=0;
-    
+
     var passup=false,
         passdown=false;
-    
+
     var wwl=$(".wrap .web .web_wrap .mockup li").length-1;
-    
+
     //BASIC OPTION
     passup=true;
     $(".wrap .web .web_wrap .txt li").eq(0).show();
     $(".wrap .web .web_wrap #link_guide li").eq(0).show();
-    
+
     //PROGRESSBAR EVENT
     var bar_aside=new ProgressBar.Circle("#bar_aside",{
         strokeWidth: 4,
@@ -71,7 +79,7 @@ $("document").ready(function(){
             color: "#7d6f7c"
         }
     })
-    
+
     //RESIZE EVENT
     $(window).resize(function(){
         height=$(this).height();
@@ -79,11 +87,11 @@ $("document").ready(function(){
             scrollTop: height * count
         },1000)
     })
-    
+
     //SCROLL EVENT
     $("html, body").scroll(function(){
         pos=$(this).scrollTop();
-        
+
         //ASIDE EVENT
         var current=(pos / (height * 4));
         bar_aside.animate(current);
@@ -94,14 +102,14 @@ $("document").ready(function(){
             $("aside #bar_aside").removeClass("op")
             $("aside .arrow").removeClass("rotate")
         }
-        
+
         //NAV HIDE SHOW EVENT
         if(pos>=height){
             $("nav").fadeIn(500)
         }else{
             $("nav").fadeOut(500)
         }
-        
+
         //SKILLS PROGRESSBAR PLAY
         if(pos>=height){
             bar_htmlcss.animate(0.8);
@@ -110,13 +118,13 @@ $("document").ready(function(){
             bar_illustrator.animate(0.6);
         }
     })
-   
+
     //WHEEL EVENT
     var wheeltime=false;
-    
+
     $(window).on("mousewheel DOMMousewheel",function(e){
         var delta=e.originalEvent.wheelDelta;
-        
+
         if(wheeltime==true){
             return;
         }
@@ -124,7 +132,7 @@ $("document").ready(function(){
             wheeltime=false;
         },1000)
         wheeltime=true;
-        
+
         //COUNT ++ --
         if(delta<0){
             if(count==2){
@@ -179,19 +187,19 @@ $("document").ready(function(){
             count--;
             if(count<0) count=0;
         }
-        
-        //COUNT SCROLL 
+
+        //COUNT SCROLL
         $("html, body").stop().animate({
             scrollTop: height * count
         },1000)
-        
+
         //NAV
         $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
-        
+
         console.log(count, wc, passup, passdown)
-        
+
     })
-    
+
     //KEY EVENT
     var keytime=false;
     $(window).keydown(function(e){
@@ -203,7 +211,7 @@ $("document").ready(function(){
         //40 : ↓
         //48~57 : left 0~9
         //96~105 : right 0~9
-        
+
         if(keytime==true){
             return;
         }
@@ -211,7 +219,7 @@ $("document").ready(function(){
             keytime=false;
         },1000)
         keytime=true;
-        
+
         //COUNT ++ --
         if(e.keyCode==40||e.keyCode==39){
             if(count==2){
@@ -267,21 +275,21 @@ $("document").ready(function(){
             count--;
             if(count<0) count=0;
         }
-        
+
         //wheel count 값에 따른 scrollTop 지정
         $("html, body").stop().animate({
             scrollTop: height * count
         },1000)
-       
+
         //NAV
         $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
-        
+
         //GUIDE CLOSE
         if(e.keyCode==27){
             close_guide();
         }
     })
-    
+
     //TOUCH SWIPE EVENT
     $("body").swipe({
         swipe: function(event, direction){
@@ -338,18 +346,18 @@ $("document").ready(function(){
                 count--;
                 if(count<0) count=0;
             }
-            
+
             //wheel count 값에 따른 scrollTop 지정
             $("html, body").stop().animate({
                 scrollTop: height * count
             },1000)
-            
+
             //NAV
             $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
         },
         excludedElements: $(".guide")
     });
-    
+
     //ASIDE CLICK EVENT
     $("aside").click(function(){
         wc=0;
@@ -367,7 +375,7 @@ $("document").ready(function(){
             count=0;
         }
     })
-    
+
     //NAV CLICK EVENT
     $("nav ol li").eq(0).addClass("pos")
     $("nav ol li").click(function(){
@@ -386,7 +394,7 @@ $("document").ready(function(){
             $(".wrap .web .web_wrap .txt li").hide().eq(0).show()
         }
     })
-    
+
     //GUIDE EVENT
     var $web_guide=$(".wrap .web .web_wrap .guide"),
         $design_guide=$(".wrap .design .guide"),
@@ -444,5 +452,22 @@ $("document").ready(function(){
     $(".guide li, .orig li").click(function(e){
         return false;
     })
-    
+    function mouseScrollStop(){
+
+    }
+    $(document).ready(function() {
+      $('body').on('scroll touchmove mousewheel', function(e) {
+         e.preventDefault();
+         e.stopPropagation();
+         return false;
+      });
+      $('aside').hide();
+      setTimeout(function() {
+           $('body').off('scroll touchmove mousewheel');
+           $(".loading_back").fadeOut();
+           $('aside').show();
+          /* $('div').removeClass('loading_back');*/
+       }, 3500);
+     });
+
 })

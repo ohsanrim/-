@@ -25,7 +25,7 @@ aside .arrow { position: absolute; width: 100%; height: 100%; transition: transf
 aside .arrow img { width: 100%; height: 100%; }
 aside .arrow.rotate { transform: rotate(-180deg); }
 
-.main { position: relative; background-color: #c5cae9; }
+.main { position: relative; background-color: #c5cae9;}
 .main .box { position: absolute; height: auto; width: auto; right: 200px; bottom: 200px; background-color: rgba(0, 0, 0, 0.8); }
 .main .box * { position: absolute; right: 0; bottom: 0; font-family: 'Black Han Sans', sans-serif; }
 .main .box span { width: 500px; right: 300px; bottom: 320px; font-size: 50px; color: rgba(148, 153, 183, 0.8); text-shadow: -1px -1px 5px #e9d8e8, 0 0 0 #54255f; text-align: right; }
@@ -41,7 +41,7 @@ aside .arrow.rotate { transform: rotate(-180deg); }
 .about h1 { font-size: 36px; color: #9398b6; letter-spacing: -1px; line-height: 50px; }
 .about span { font-size: 18px; font-weight: 400; color: #7d6f7c; line-height: 40px; }
 .about .info { position: absolute; }
-.about .info:nth-child(1) { left: 0; bottom: 200px; background-color: #e9d8e8; }
+.about .info:nth-child(1) { left: 0; bottom: 300px; background-color: #e9d8e8; }
 .about .info:nth-child(2) { left: 0; bottom: 0; }
 .about .info:nth-child(3) { right: 0; bottom: 200px; text-align: right; }
 .about .info:nth-child(3) .skills_bar { width: 280px; height: 160px; }
@@ -51,7 +51,6 @@ aside .arrow.rotate { transform: rotate(-180deg); }
 .about .info:nth-child(3) .skills_bar li .bar { width: 120px; height: 60px; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; font-weight: 300; cursor: default; }
 .about .info:nth-child(4) { right: 0; bottom: 0; text-align: right; }
 .about .info:nth-child(4) span { display: inline-block; }
-.about .info:nth-child(4) span:last-child { font-weight: 300; }
 
 .web_wrap { position: absolute; width: 100%; height: 700px; top: calc(50% - 350px); background-color: #fff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
 .web_wrap .mockup { position: relative; width: calc(100% - 500px); height: 100%; float: left; }
@@ -212,3 +211,99 @@ aside .arrow.rotate { transform: rotate(-180deg); }
 @font-face { font-family: 'yg-jalnan'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff") format("woff"); font-weight: normal; font-style: normal; }
 
 /*# sourceMappingURL=portfolio.css.map */
+#educationDate{
+  color: #c5cae9;
+  font-weight: bold;
+}
+@import "bourbon";
+
+/* Demo Styles */
+
+#content {
+  margin: 0 auto;
+  padding-bottom: 50px;
+  width: 80%;
+  max-width: 978px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+
+/*loader*/
+
+.loading_back {
+  margin:0;
+  width: 100%;
+  height: 100%;
+  background-color: #9398b6;
+}
+.loading,
+.loading::before,
+.loading::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left-color: rgba(255, 255, 255, 0.4);
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  border-radius: 999px;
+}
+
+.loading {
+  margin: -25px 0 0 -25px;
+  height: 50px;
+  width: 50px;
+  -webkit-animation: animation-rotate 1000ms linear infinite;
+  -moz-animation: animation-rotate 1000ms linear infinite;
+  -o-animation: animation-rotate 1000ms linear infinite;
+  animation: animation-rotate 1000ms linear infinite;
+}
+
+.loading::before {
+  content: "";
+  margin: -23px 0 0 -23px;
+  height: 44px;
+  width: 44px;
+  -webkit-animation: animation-rotate 1000ms linear infinite;
+  -moz-animation: animation-rotate 1000ms linear infinite;
+  -o-animation: animation-rotate 1000ms linear infinite;
+  animation: animation-rotate 1000ms linear infinite;
+}
+
+.loading::after {
+  content: "";
+  margin: -29px 0 0 -29px;
+  height: 56px;
+  width: 56px;
+  -webkit-animation: animation-rotate 2000ms linear infinite;
+  -moz-animation: animation-rotate 2000ms linear infinite;
+  -o-animation: animation-rotate 2000ms linear infinite;
+  animation: animation-rotate 2000ms linear infinite;
+}
+
+@-webkit-keyframes animation-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes animation-rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes animation-rotate {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes animation-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
