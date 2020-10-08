@@ -76,6 +76,7 @@ $("document").ready(function(){
     var wheeltime=false;
 
     $(window).on("mousewheel DOMMousewheel",function(e){
+      console.log(wc,wwl)
         var delta=e.originalEvent.wheelDelta;
 
         if(wheeltime==true){
@@ -99,6 +100,7 @@ $("document").ready(function(){
                 //WC OPTION
                 if(wc==0){
                     passup=true;
+
                 }else{
                     passup=false;
                 }
@@ -106,6 +108,8 @@ $("document").ready(function(){
                     setTimeout(function(){
                         passdown=true;
                     },1000)
+
+                    console.log("여기인가?")
                 }else{
                     passdown=false;
                 }
@@ -118,6 +122,7 @@ $("document").ready(function(){
                 wc--;
                 if(wc<0) wc=0;
                 //WEB PLAY
+
                 $(".wrap .web .web_wrap .mockup li").eq(wc).addClass("select")
                 $(".wrap .web .web_wrap .mockup li").eq(wc+1).removeClass("select")
                 $(".wrap .web .web_wrap .txt li").hide().eq(wc).show()
