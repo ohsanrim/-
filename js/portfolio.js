@@ -59,7 +59,6 @@ $("document").ready(function(){
     }else{
         $("nav").fadeOut(500)
     }
-
   }
     //WHEEL EVENT
     var wheeltime=false;
@@ -93,7 +92,7 @@ $("document").ready(function(){
         //NAV
         $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
         //scrollEvent 실핸
-        console.log(count);
+        console.log("scrollevent"+count);
         pos=height * (count);
         scrollevent(pos);
     })
@@ -173,31 +172,13 @@ $("document").ready(function(){
             console.log(count);
             pos=height * (count);
             scrollevent(pos);
-            
+
             //NAV
             $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
         },
         excludedElements: $(".guide")
 
     });
-
-    //ASIDE CLICK EVENT
-    $("aside").click(function(){
-        wc=0;
-        $(".wrap .web .web_wrap .mockup li").removeClass("select")
-        $(".wrap .web .web_wrap .txt li").hide().eq(0).show()
-        if(pos==0){
-            $("html, body").stop().animate({
-                scrollTop: height
-            },1000)
-            count=1;
-        }else{
-            $("html, body").stop().animate({
-                scrollTop: 0
-            },0);
-            count=0;
-        }
-    })
 
     //NAV CLICK EVENT
     $("nav ol li").eq(0).addClass("pos")
@@ -206,6 +187,9 @@ $("document").ready(function(){
         $("html, body").stop().animate({
             scrollTop: height * count
         },0)
+        pos=height * (count);
+        scrollevent(pos);
+
         $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
         if(count==3||count==4){
             wc=wwl;
@@ -292,5 +276,25 @@ $("document").ready(function(){
           /* $('div').removeClass('loading_back');*/
        }, 3000);
      });
+     //
 
+     //arrow click EVENT
+     $('.arrow').click(function(){
+       if(count>=1){
+         count=0;
+         $("html, body").stop().animate({
+             scrollTop: height * 0
+         },1000)
+       } else {
+         count=1;
+         $("html, body").stop().animate({
+             scrollTop: height * count
+         },1000)
+       }
+       //scrollEvent 실핸
+
+       pos=height * (count);
+       scrollevent(pos);
+
+     });
 })
