@@ -44,6 +44,7 @@ $("document").ready(function(){
     //SCROLL EVENT
     $("html, body").scroll(function(){
         pos=$(this).scrollTop();
+        console.log(pos,height)
 
         //ASIDE EVENT
         var current=(pos / (height * 4));
@@ -76,7 +77,6 @@ $("document").ready(function(){
     var wheeltime=false;
 
     $(window).on("mousewheel DOMMousewheel",function(e){
-      console.log(wc,wwl)
         var delta=e.originalEvent.wheelDelta;
 
         if(wheeltime==true){
@@ -89,59 +89,9 @@ $("document").ready(function(){
 
         //COUNT ++ --
         if(delta<0){
-            if(count==2){
-                wc++;
-                if(wc>wwl) wc=wwl;
-                //WEB PLAY
-                $(".wrap .web .web_wrap .mockup li").eq(wc).addClass("select")
-                $(".wrap .web .web_wrap .mockup li").eq(wc+1).removeClass("select")
-                $(".wrap .web .web_wrap .txt li").hide().eq(wc).show()
-                $(".wrap .web .web_wrap #link_guide li").hide().eq(wc).show()
-                //WC OPTION
-                if(wc==0){
-                    passup=true;
-
-                }else{
-                    passup=false;
-                }
-                if(wc==wwl){
-                    setTimeout(function(){
-                        passdown=true;
-                    },1000)
-
-                    console.log("여기인가?")
-                }else{
-                    passdown=false;
-                }
-                if(passdown==false) return;
-            }
             count++;
             if(count>4) count=4;
         }else{
-            if(count==2){
-                wc--;
-                if(wc<0) wc=0;
-                //WEB PLAY
-
-                $(".wrap .web .web_wrap .mockup li").eq(wc).addClass("select")
-                $(".wrap .web .web_wrap .mockup li").eq(wc+1).removeClass("select")
-                $(".wrap .web .web_wrap .txt li").hide().eq(wc).show()
-                $(".wrap .web .web_wrap #link_guide li").hide().eq(wc).show()
-                //WC OPTION
-                if(wc==0){
-                    setTimeout(function(){
-                        passup=true;
-                    },1000)
-                }else{
-                    passup=false;
-                }
-                if(wc==wwl){
-                    passdown=true;
-                }else{
-                    passdown=false;
-                }
-                if(passup==false) return;
-            }
             count--;
             if(count<0) count=0;
         }
@@ -154,7 +104,6 @@ $("document").ready(function(){
         //NAV
         $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
 
-        console.log(count, wc, passup, passdown)
 
     })
 
@@ -180,56 +129,12 @@ $("document").ready(function(){
 
         //COUNT ++ --
         if(e.keyCode==40||e.keyCode==39){
-            if(count==2){
-                wc++;
-                if(wc>wwl) wc=wwl;
-                //WEB PLAY
-                $(".wrap .web .web_wrap .mockup li").eq(wc).addClass("select")
-                $(".wrap .web .web_wrap .mockup li").eq(wc+1).removeClass("select")
-                $(".wrap .web .web_wrap .txt li").hide().eq(wc).show()
-                $(".wrap .web .web_wrap #link_guide li").hide().eq(wc).show()
-                //WC OPTION
-                if(wc==0){
-                    passup=true;
-                }else{
-                    passup=false;
-                }
-                if(wc==wwl){
-                    setTimeout(function(){
-                        passdown=true;
-                    },1000)
-                }else{
-                    passdown=false;
-                }
-                if(passdown==false) return;
-            }
+
             count++;
             if(count>4) count=4;
         }
         if(e.keyCode==38||e.keyCode==37){
-            if(count==2){
-                wc--;
-                if(wc<0) wc=0;
-                //WEB PLAY
-                $(".wrap .web .web_wrap .mockup li").eq(wc).addClass("select")
-                $(".wrap .web .web_wrap .mockup li").eq(wc+1).removeClass("select")
-                $(".wrap .web .web_wrap .txt li").hide().eq(wc).show()
-                $(".wrap .web .web_wrap #link_guide li").hide().eq(wc).show()
-                //WC OPTION
-                if(wc==0){
-                    setTimeout(function(){
-                        passup=true;
-                    },1000)
-                }else{
-                    passup=false;
-                }
-                if(wc==wwl){
-                    passdown=true;
-                }else{
-                    passdown=false;
-                }
-                if(passup==false) return;
-            }
+
             count--;
             if(count<0) count=0;
         }
@@ -252,55 +157,11 @@ $("document").ready(function(){
     $("body").swipe({
         swipe: function(event, direction){
             if(direction=="up"||direction=="left"){
-                if(count==2){
-                    wc++;
-                    if(wc>wwl) wc=wwl;
-                    //WEB PLAY
-                    $(".wrap .web .web_wrap .mockup li").eq(wc).addClass("select")
-                    $(".wrap .web .web_wrap .mockup li").eq(wc+1).removeClass("select")
-                    $(".wrap .web .web_wrap .txt li").hide().eq(wc).show()
-                    $(".wrap .web .web_wrap #link_guide li").hide().eq(wc).show()
-                    //WC OPTION
-                    if(wc==0){
-                        passup=true;
-                    }else{
-                        passup=false;
-                    }
-                    if(wc==wwl){
-                        setTimeout(function(){
-                            passdown=true;
-                        },1000)
-                    }else{
-                        passdown=false;
-                    }
-                    if(passdown==false) return;
-                }
+
                 count++;
                 if(count>4) count=4;
             }else if(direction=="down"||direction=="right"){
-                if(count==2){
-                    wc--;
-                    if(wc<0) wc=0;
-                    //WEB PLAY
-                    $(".wrap .web .web_wrap .mockup li").eq(wc).addClass("select")
-                    $(".wrap .web .web_wrap .mockup li").eq(wc+1).removeClass("select")
-                    $(".wrap .web .web_wrap .txt li").hide().eq(wc).show()
-                    $(".wrap .web .web_wrap #link_guide li").hide().eq(wc).show()
-                    //WC OPTION
-                    if(wc==0){
-                        setTimeout(function(){
-                            passup=true;
-                        },1000)
-                    }else{
-                        passup=false;
-                    }
-                    if(wc==wwl){
-                        passdown=true;
-                    }else{
-                        passdown=false;
-                    }
-                    if(passup==false) return;
-                }
+
                 count--;
                 if(count<0) count=0;
             }
