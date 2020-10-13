@@ -41,42 +41,31 @@ $("document").ready(function(){
         },1000)
     })
 
-    //SCROLL EVENT
-    $("html, body").scroll(function(){
-        pos=$(this).scrollTop();
-        console.log(pos,height)
+  function scrollevent(pos){
+    //ASIDE EVENT
+    var current=(pos / (height * 4));
+    bar_aside.animate(current);
+    if(pos!=0){
+        $("aside #bar_aside").addClass("op")
+        $("aside .arrow").addClass("rotate")
+    }else{
+        $("aside #bar_aside").removeClass("op")
+        $("aside .arrow").removeClass("rotate")
+    }
 
-        //ASIDE EVENT
-        var current=(pos / (height * 4));
-        bar_aside.animate(current);
-        if(pos!=0){
-            $("aside #bar_aside").addClass("op")
-            $("aside .arrow").addClass("rotate")
-        }else{
-            $("aside #bar_aside").removeClass("op")
-            $("aside .arrow").removeClass("rotate")
-        }
+    //NAV HIDE SHOW EVENT
+    if(pos>=height){
+        $("nav").fadeIn(500)
+    }else{
+        $("nav").fadeOut(500)
+    }
 
-        //NAV HIDE SHOW EVENT
-        if(pos>=height){
-            $("nav").fadeIn(500)
-        }else{
-            $("nav").fadeOut(500)
-        }
-
-        //SKILLS PROGRESSBAR PLAY
-        if(pos>=height){
-            bar_htmlcss.animate(0.8);
-            bar_jquery.animate(0.65);
-            bar_photoshop.animate(0.85);
-            bar_illustrator.animate(0.6);
-        }
-    })
-
+  }
     //WHEEL EVENT
     var wheeltime=false;
 
     $(window).on("mousewheel DOMMousewheel",function(e){
+      //pos값 제어
         var delta=e.originalEvent.wheelDelta;
 
         if(wheeltime==true){
@@ -103,8 +92,10 @@ $("document").ready(function(){
 
         //NAV
         $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
-
-
+        //scrollEvent 실핸
+        console.log(count);
+        pos=height * (count);
+        scrollevent(pos);
     })
 
     //KEY EVENT
@@ -147,6 +138,11 @@ $("document").ready(function(){
         //NAV
         $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
 
+        //scrollEvent 실핸
+        console.log(count);
+        pos=height * (count);
+        scrollevent(pos);
+
         //GUIDE CLOSE
         if(e.keyCode==27){
             close_guide();
@@ -166,15 +162,23 @@ $("document").ready(function(){
                 if(count<0) count=0;
             }
 
+
+
             //wheel count 값에 따른 scrollTop 지정
             $("html, body").stop().animate({
                 scrollTop: height * count
             },1000)
 
+            //scrollEvent 실핸
+            console.log(count);
+            pos=height * (count);
+            scrollevent(pos);
+            
             //NAV
             $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
         },
         excludedElements: $(".guide")
+
     });
 
     //ASIDE CLICK EVENT
