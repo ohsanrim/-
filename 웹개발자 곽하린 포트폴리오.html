@@ -9,7 +9,6 @@
 
     <title>웹퍼블리셔 곽하린 포트폴리오</title>
 
-    <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
     <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
@@ -20,14 +19,17 @@
     <!--font-family: 'Noto Sans KR', sans-serif;-->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/imagehover.min.css">
     <link rel="stylesheet" href="css/portfolio.css">
+
+    <!--csshake-->
+    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
 
     <!--AOS 라이브러리-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!--AOS 라이브러리-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
@@ -63,12 +65,12 @@
     <!--    MAIN-->
     <div class="main section">
         <div class="box">
-            <span>Web Developer<br>Portfolio</span>
-            <p>H</p>
-            <p>a</p>
-            <p>R</p>
-            <p>i</p>
-            <p>n</p>
+            <span >Web Developer<br>Portfolio</span>
+            <p class="preview-item small shake-slow shake-constant shake-constant--hover" style="animation-duration: 8s;">H</p>
+            <p class="preview-item small shake-little shake-constant shake-constant--hover">a</p>
+            <p class="preview-item small shake-slow shake-constant shake-constant--hover">R</p>
+            <p class="preview-item small shake-little shake-constant shake-constant--hover">i</p>
+            <p class="preview-item small shake-slow shake-constant shake-constant--hover" style="animation-duration: 6s;">n</p>
         </div>
     </div>
 
@@ -77,19 +79,24 @@
         <div class="about section">
             <div class="height_wrap">
                 <div class="selfie info" id="selfie">
-                    <img  src="images/profile1.jpg" alt="about_img">
+                  <figure class="imghvr-reveal-left">
+                    <img class="trigger"src="images/profile1.jpg" alt="about_img" >
+                    <figcaption class="hoverImg trigger">
+                      <img id="imageOriginal"  src="images/original1.png" alt="">
+                    </figcaption><a href="javascript:;"></a>
+                  </figure>
                 </div>
                 <div class="profile info" >
-                    <h1>항상 새로운 꿈을 꾸는 개발자, 곽하린 입니다.</h1>
+                  <input type="hidden" id="typing-txt" value="항상 새로운 꿈을 꾸는 개발자, 곽하린 입니다.">
+                    <h1 id="typing"></h1>
                     <div id="scrollEvent1">
                       <span><br>학창시절과 대학생 시절 내내 제 인생의 신조는 "도전하는 자만이 기회를 얻는다" 이었습니다. 단순한 말이지만 이 말에는 엄청난 힘이 숨겨져 있습니다. 무슨 일이든 마음을 먹고 시도하면, 시작부터 겁을 먹고 도전하지 못하는 사람들보다 같은 조건에서도 더 많은 기회를 잡을 수 있기 때문입니다.
                       그러므로 언제나 새로운 일에 도전하고 견문을 넓히는 것이 제 인생의 이상향이자 목표고, 앞으로도 끊임없이 새로운 것을 도전하면서 제게 주어진 기회를 놓치지 않을 것이라고 자부할 수 있습니다.
                       <br><br>
-                      항상 끊임없이 새로운 것을 배우고 경험하며, 남들에게 <span id="point">"잘하는 개발자"</span> 뿐만이 아닌 다방면에서 제 열정을 뽐내는 <span id="point">"만능 에너자이저 개발자"</span>가 되는 것이 저의 목표입니다.
+                      항상 끊임없이 새로운 것을 배우고 경험하며, <span id="point">"노력파 개발자"</span> 뿐만이 아닌 다방면에서 제 열정을 뽐내는 <span id="point">"만능 에너자이저 개발자"</span>가 되는 것이 저의 목표입니다.
                       </span>
                     </div>
                 </div>
-
             </div>
         </div>
         <!-- skill -->
@@ -129,24 +136,24 @@
         <!--        work-->
         <div class="work1 section">
           <div class="work1_wrapper">
-            <div class="work1_info" id="slideLeft">
-              <div class="work1_header">
+            <div class="work_info" id="slideLeft">
+              <div class="work_header">
                 <h1>"Cookie Run" Project</h1>
               </div>
-              <div class="work1_skills">
+              <div class="work_skills">
                 <div class="skill_design">java</div>
                 <div class="skill_design">Oracle</div>
               </div>
-              <div class="work1_ex" >
-                모바일 게임인 쿠키런을 PC 버전의 1대1 매칭 시스템으로 구현한 “쿠키런”프로젝트.
+              <div class="work_ex" >
+                모바일 게임인 쿠키런을 PC 버전의 1대1 매칭 시스템으로 구현한 “쿠키런”프로젝트.<br>
 대기실 네트워크 쪽과 게임 구현.<br>
 멀티 스레드를 통해 게임의 프레임을 여러가지로 나누어서 동시 진행이 되도록 구현.<br>
 웹 소켓을 활용하여 실시간으로 대전중인 상대방의 점수를 확인할 수 있게 구현.<br>
 웹소켓을 통한 대기실 시스템 구축 및 랭킹 시스템 구현.
               </div>
-              <div class="work1_gitLink">
-                <img class="gitLink_img" id="gitLink1"  src="https://www.logolynx.com/images/logolynx/23/2334e82ea682a206c57645eb95817e43.png">
-                <i class="far fa-file-powerpoint" id="powerPoint_work1"></i>
+              <div class="work_gitLink">
+                <img class="gitLink_img" id="gitLink1"  src="https://www.logolynx.com/images/logolynx/23/2334e82ea682a206c57645eb95817e43.png" onclick="window.open('https://github.com/ohsanrim/CookieRun_project', 'Cookie Run github page');">
+                <i class="far fa-file-powerpoint" id="powerPoint_work1" onclick="window.open('portfolio/cookie_run_project.pdf', 'Cookie Run Project');"></i>
               </div>
             </div>
             <div class="design_container">
@@ -267,22 +274,51 @@
             </ul>
 -->
         </div>
+        <!--morip 프로젝트-->
         <div class="work2 section">
-          <ul class="design_wrap">
-              <li>
-                  <div class="mockup">
-                      <a href="http://www.kimyeju.com/original/mcdelivery.jpg" target="_blank" id="orig0"><img src="images/original.png" alt="원본 보기"></a>
-                  </div>
-                  <div class="txt">
-                      <p>mobile web</p>
-                      <a href="http://www.kimyeju.com/original/mcdelivery.jpg" target="_blank">MCdelivery</a>
-                      <div class="link_guide" id="design0">
-                          <p>Detail</p>
-                          <img src="images/works_design_arrow.png" alt="detail">
+          <div class="work2_wrapper">
+            <div class="design_container">
+              <ul class="design_wrap">
+                  <li>
+                      <div class="mockup">
+                          <a href="http://www.kimyeju.com/original/mcdelivery.jpg" target="_blank" id="orig0">
+                            <img src="images/morip.png" alt="원본 보기"></a>
                       </div>
-                  </div>
-              </li>
-          </ul>
+                  </li>
+              </ul>
+            </div>
+            <div class="work_info" id="slideRight">
+              <div class="work_header">
+                <h1>"MO:RIP" Project</h1>
+              </div>
+              <div class="work_skills">
+                <div class="skill_design">java</div>
+                <div class="skill_design">Oracle</div>
+                <div class="skill_design">Spring</div>
+                <div class="skill_design">Bootstrap</div>
+                <div class="skill_design">jQuery</div>
+                <div class="skill_design">Javascript</div>
+                <div class="skill_design">HTML5</div>
+                <div class="skill_design">CSS3</div>
+                <div class="skill_design">Ajax</div>
+                <div class="skill_design">Spring MVC</div>
+                <div class="skill_design">MyBatis</div>
+                <div class="skill_design">Apache Tomcat</div>
+              </div>
+              <div class="work_ex" >
+                국내의 인스타그램 및 여행노트, VOLO 등의 여행기록사이트와 SNS를 모티브로 제작한 여행기록사이트 “몰입(MO:RIP)” 프로젝트<br>
+마이페이지 디자인 및 기능 구현, 여행기 작성 페이지 디자인 및 기능 구현, 관리자 페이지 디자인, 뷰, 글 수정, 미리보기 페이지 디자인 및 기능 구현 담당.<br>
+전반적인 페이지 Front-end 작업 진행.<br>
+마이페이지에서 무한스크롤 구현.<br>
+글 작성 페이지에서 full calendar API 를 통한 캘린더 구현.<br>
+summernote API 를 통한 글 작성 구현(map-plugIn 사용).<br>
+              </div>
+              <div class="work_gitLink">
+                <img class="gitLink_img" id="gitLink1"  src="https://www.logolynx.com/images/logolynx/23/2334e82ea682a206c57645eb95817e43.png" onclick="window.open('https://github.com/ohsanrim/morip', 'Cookie Run github page');">
+                <i class="far fa-file-powerpoint" id="powerPoint_work1" onclick="window.open('portfolio/MORIP_project.pdf', 'Cookie Run Project');"></i>
+              </div>
+            </div>
+          </div>
         </div>
         <!--        CONTACT-->
         <div class="contact section">
@@ -303,5 +339,37 @@
             </div>
         </div>
     </div>
+    <!-- Modal -->
+  <div class="modal-wrapper">
+    <div class="modal">
+      <div class="head">
+        <a class="btn-close trigger" href="#">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="content">
+        <div class="myLogo">
+          <img src="images/harin3.jpg" alt="">
+        </div>
+        <div class="myInfo">
+          <div class="info name">
+            <h4>Name</h4><p>곽하린</p>
+          </div>
+          <div class="info age">
+            <h4>Age</h4><p>23세(1998.02.08)</p>
+          </div>
+          <div class="info phone">
+            <h4>Phone</h4><p>82+ 10-4319-7701</p>
+          </div>
+          <div class="info blog">
+            <h4>Blog</h4><a href="https://blog.naver.com/ka28" target="_blank">www.blog.naver.com/ka28</a>
+          </div>
+          <div class="info github">
+            <h4>Github</h4> <a href="https://github.com/ohsanrim" target="_blank">www.github.com/ohsanrim</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
