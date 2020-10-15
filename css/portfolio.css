@@ -16,6 +16,8 @@ ul li{ list-style: none; }
 
 .height_wrap { position: absolute; width: 100%; height: 700px; top: calc(50% - 350px); }
 
+.skill_design{ background-color: #e8eaf6; color: #9398b6; font-size: 14px; margin-right:5px; padding-left:10px; padding-top:2px; padding-bottom:2px; padding-right:10px; border-radius: 4px; align-items: center; display:flex; justify-content: center;}
+
 nav { position: fixed; color: #c4bdc5; font-family: 'LotteMartDream'; font-size: 16px; text-align: right; right: 40px; top: 40px; font-weight: 300; z-index: 10; display: none; }
 nav ol li { margin-bottom: 10px; cursor: pointer; }
 nav ol li.pos { font-weight: 400; color: #7d6f7c; }
@@ -43,12 +45,17 @@ aside .arrow.rotate { transform: rotate(-180deg); }
 .height_wrap{ display:flex; justify-content:center; align-items: center; }
 .about h1 { font-size: 36px; color: #9398b6; letter-spacing: -1px; line-height: 50px; }
 .about span { font-size: 16px; font-weight: 400; color: #7d6f7c; line-height: 40px; }
-.about img{ width:500px; border-radius: 20px;}
+.about img{ width:400px; border-radius: 20px;cursor:pointer;}
 .about .profile{ margin-left:100px; width:50%;}
 .profile #point{ color: #c5cae9; }
 
 .skill h1 { font-size: 36px; color: #9398b6; letter-spacing: -1px; line-height: 50px; }
-.skil span { font-size: 18px; font-weight: 400; color: #7d6f7c; line-height: 40px; }
+.skill span { font-size: 18px; font-weight: 400; color: #7d6f7c; line-height: 40px; }
+.skill .height_wrap{ width:100%; height:100%; display:flex; align-items: center;}
+.skill_wrapper{ width:100%; height:100%; }
+.skill_wrapper .education{ margin-top:100px; }
+.frontDiv, .backDiv{  margin-top:50px; }
+.frontDiv img, .backDiv img{ width:100px; }
 
 .web_wrap { position: absolute; width: 100%; height: 700px; top: calc(50% - 350px); background-color: #fff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
 .web_wrap .mockup { position: relative; width: calc(100% - 500px); height: 100%; float: left; }
@@ -75,24 +82,29 @@ aside .arrow.rotate { transform: rotate(-180deg); }
 .web_wrap #link_guide li:hover img { left: 100%; }
 .web_wrap #link_guide li:not(:first-child) { display: none; }
 
-.design_wrap { position: absolute; width: 100%; height: 700px; top: calc(50% - 350px); display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; justify-content: space-between; }
-.design_wrap li { width: 31%; height: 100%; background-color: #fff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+.work1 .design_wrap { position: absolute; width: 31%; height: 700px; top: calc(50% - 350px); display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; justify-content: space-between; }
+.design_wrap li { width: 100%; height: 100%; background-color: #fff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
 .design_wrap li:nth-child(1) .mockup { background: url(../images/mockup_mc.jpg) center center no-repeat; }
 .design_wrap li:nth-child(2) .mockup { background: url(../images/mockup_wedding.jpg) center center no-repeat; }
 .design_wrap li:nth-child(3) .mockup { background: url(../images/mockup_info.jpg) center center no-repeat; }
-.design_wrap li .mockup { position: relative; width: 100%; height: 65%; float: left; overflow: hidden; background-size: 100% !important; transition: all .3s; }
-.design_wrap li .mockup a { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; text-align: center; line-height: 700px; color: #fff; background-color: rgba(0, 0, 0, 0.3); transition: all .3s; }
-.design_wrap li .mockup a img { position: absolute; width: 60px; height: 60px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.design_wrap li .mockup { position: relative; width: 100%; height: 100%; float: left; overflow: hidden; background-size: 100% !important; transition: all .3s; }
+.design_wrap li .mockup a { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.5; text-align: center; line-height: 700px; color: #fff; background-color: rgba(0, 0, 0, 0.3); transition: all .3s; }
+.design_wrap li .mockup a img { position: absolute; height: 100%;top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .design_wrap li .mockup:hover { background-size: 110% !important; }
 .design_wrap li .mockup:hover a { opacity: 1; }
-.design_wrap li .txt { position: relative; width: 100%; height: 35%; float: left; text-align: center; }
-.design_wrap li .txt > p:nth-of-type(1) { font-family: 'LotteMartDream'; font-size: 13px; font-weight: 400; color: #555; margin-top: 10%; }
-.design_wrap li .txt a { display: inline-block; font-size: 44px; letter-spacing: -2px; margin-top: 5%; }
-.design_wrap li .txt .link_guide { position: absolute; width: 40px; height: 15px; left: calc(50% - 20px); bottom: 20%; overflow: hidden; cursor: pointer; }
-.design_wrap li .txt .link_guide p { position: absolute; right: 41px; line-height: 15px; font-size: 14px; color: #555; cursor: pointer; transition: all .5s; }
-.design_wrap li .txt .link_guide img { position: absolute; width: 100%; height: 100%; left: 0; cursor: pointer; transition: all .5s; }
-.design_wrap li .txt .link_guide:hover p { right: 1px; }
-.design_wrap li .txt .link_guide:hover img { left: 100%; }
+
+.work1_ex{ font-size: 18px; font-weight: 400; color: #7d6f7c; line-height: 40px; }
+
+.work1_wrapper{ display:flex; width:100%; height:100%;justify-content: space-between; align-items: center;}
+.work1_info, .design_container{ width:50%; }
+.work1_info{ margin:50px;}
+.design_container{ display:flex; justify-content: center;}
+.work1_header h1{ font-size: 36px; color: #9398b6; letter-spacing: -1px; line-height: 50px; margin:0; margin-bottom:10px; }
+.work1_skills{ display:flex; }
+.work1_ex{ width:85%; margin-top:50px; margin-bottom:25px; font-size: 15px;}
+.gitLink_img{ width:30px; cursor:pointer; }
+.work1_gitLink{ display:flex; align-items: center; }
+#powerPoint_work1{ margin-left:12px; color:#494949; font-size:23px; cursor:pointer; }
 
 .guide { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 99; background-color: rgba(0, 0, 0, 0.5); cursor: pointer; display: none; }
 .guide li { position: absolute; width: 1217px; height: 800px; top: 50%; left: 50%; z-index: 100; transform: translate(-50%, -50%); background-color: #fff; overflow: auto; cursor: default; display: none; }
@@ -311,7 +323,4 @@ h1 {
   display:flex;
   justify-content: space-between;
   align-items: center;
-}
-#frontImg,#backImg{
-  width:80px;
 }

@@ -25,10 +25,10 @@ $("document").ready(function(){
 
     //PROGRESSBAR EVENT
     var bar_aside=new ProgressBar.Circle("#bar_aside",{
-        strokeWidth: 4,
+        strokeWidth:5,
         duration: 1,
         color: "#754775",
-        trailWidth: 4,
+        trailWidth: 5,
         trailColor: "#c4bdc5"
     })
 
@@ -43,7 +43,7 @@ $("document").ready(function(){
 
   function scrollevent(pos){
     //ASIDE EVENT
-    var current=(pos / (height * 4));
+    var current=(pos / (height * 5));
     bar_aside.animate(current);
     if(pos!=0){
         $("aside #bar_aside").addClass("op")
@@ -78,7 +78,7 @@ $("document").ready(function(){
         //COUNT ++ --
         if(delta<0){
             count++;
-            if(count>4) count=4;
+            if(count>5) count=5;
         }else{
             count--;
             if(count<0) count=0;
@@ -92,10 +92,15 @@ $("document").ready(function(){
         //NAV
         $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
         //scrollEvent 실핸
-        console.log("scrollevent"+count);
         pos=height * (count);
         scrollevent(pos);
+        //divevent 실행
+        if(count==1) divEvent(1);
+        if(count==3) {
+          slideLeft();
+        }
     })
+
 
     //KEY EVENT
     var keytime=false;
@@ -121,7 +126,7 @@ $("document").ready(function(){
         if(e.keyCode==40||e.keyCode==39){
 
             count++;
-            if(count>4) count=4;
+            if(count>5) count=5;
         }
         if(e.keyCode==38||e.keyCode==37){
 
@@ -154,7 +159,7 @@ $("document").ready(function(){
             if(direction=="up"||direction=="left"){
 
                 count++;
-                if(count>4) count=4;
+                if(count>5) count=5;
             }else if(direction=="down"||direction=="right"){
 
                 count--;
@@ -297,4 +302,27 @@ $("document").ready(function(){
        scrollevent(pos);
 
      });
+     $('#selfie').click(function(){
+       //사진 클릭 시 팜업 띄우기
+     });
+     //스크롤 시 div 나타나는 이펙트
+     function divEvent(num){
+       if(num==1) $("#scrollEvent1").fadeIn(3000);
+       if(num==2){
+
+       }
+     }
+     $(document).ready(function(){
+       $("#slideLeft").css('opacity','0');
+       $("#scrollEvent1").hide();
+     });
+     //사용자 애니메이션
+     function slideLeft(){
+       $("#slideLeft").animate({
+          marginLeft: "100px",
+          marginRight: "0px",
+          opacity: 1
+        },
+        2000);
+     }
 })
