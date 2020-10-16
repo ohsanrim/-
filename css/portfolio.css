@@ -42,7 +42,7 @@ aside .arrow.rotate { transform: rotate(-180deg); }
 .main .box img:nth-of-type(1) { bottom: 30px; right: 120px; }
 .main .box img:nth-of-type(2) { bottom: 0; right: 70px; }
 
-.height_wrap{ display:flex; justify-content:center; align-items: center; }
+.about .height_wrap{ display:flex; justify-content:center;; align-items: center; }
 .about h1 { margin-bottom:0px; font-family: 'Noto Sans KR', sans-serif; font-size: 36px; color: #9398b6; letter-spacing: -1px; line-height: 50px; }
 .about span { font-size: 16px; font-weight: 400; color: #7d6f7c; line-height: 40px; }
 .about img{ width:400px; }
@@ -50,14 +50,15 @@ aside .arrow.rotate { transform: rotate(-180deg); }
 .profile #point{ color: #c5cae9; }
 .hoverImg{ display:flex; justify-content: center; align-items: center;}
 #imageOriginal{ width:60px; }
-
+.education_wrapper{ width:50%; height:100%; }
+.certificate{ margin-top:150px; }
 .skill h1 { font-size: 36px; color: #9398b6; letter-spacing: -1px; line-height: 50px; }
 .skill span { font-size: 18px; font-weight: 400; color: #7d6f7c; line-height: 40px; }
-.skill .height_wrap{ width:100%; height:100%; display:flex; align-items: center;}
-.skill_wrapper{ width:100%; height:100%; }
-.skill_wrapper .education{ margin-top:100px; }
+.skill .height_wrap{ width:100%; height:100%; display:flex; justify-content: space-between; align-items: center;}
+.skill_wrapper{ width:60%; height:100%; }
 .frontDiv, .backDiv{  margin-top:50px; }
 .frontDiv img, .backDiv img{ width:100px; }
+.certificate .certificate_ex{ margin-left:20px; font-size: 13px; font-style: italic;}
 
 .web_wrap { position: absolute; width: 100%; height: 700px; top: calc(50% - 350px); background-color: #fff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
 .web_wrap .mockup { position: relative; width: calc(100% - 500px); height: 100%; float: left; }
@@ -144,16 +145,52 @@ aside .arrow.rotate { transform: rotate(-180deg); }
 .orig { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 99; background-color: rgba(0, 0, 0, 0.5); cursor: pointer; display: none; z-index: 99; }
 .orig li { position: absolute; width: 800px; height: 800px; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; z-index: 100; }
 
-.contact h1 { position: absolute; top: 0; left: 0; color: rgba(84, 37, 95, 0.8); text-shadow: -1px -1px 5px rgba(255, 255, 255, 0.4), 0 0 0 #2a2a2a; font-size: 90px; }
-.contact .address { position: absolute; width: 500px; height: 200px; left: 0; bottom: 0; }
-.contact .address li { position: relative; width: 100%; height: 50%; border-bottom: 1px solid #54255f; box-sizing: border-box; font-family: 'LotteMartDream'; font-size: 18px; }
-.contact .address li > * { position: absolute; bottom: 10px; }
-.contact .address li > *:nth-child(1) { left: 0; font-weight: 300; color: #7d6f7c; }
-.contact .address li > *:nth-child(2) { right: 0; color: #54255f; }
-.contact .address li > p:nth-child(2) { cursor: text; }
-.contact .address li img { width: 80px; height: 80px; }
-.contact img { position: absolute; right: 0; bottom: 0; }
-.contact .copyright { position: absolute; right: 0; top: 100%; font-family: 'LotteMartDream'; font-size: 14px; font-weight: 300; line-height: 30px; color: #c4bdc5; }
+.contact{ background-color: #9398b6; display:flex; align-items: center; justify-content: center; }
+.contact .height_wrap{ width:80%; height:100%; display:flex; justify-content: center;}
+.contact_wrapper{ display:flex; align-items: center;  border-radius: 6px; background-color: #fff; width:700px; height:500px; position: absolute;left:300px; top:100px;}
+.contact_innerWrapper{ margin-left:100px; width:80%; height:80%; }
+.sub_contact_wrapper{ display:flex; justify-content: center; margin-left:50px; border-radius: 6px; background-color: #47424b; width:400px; height:500px; position: absolute;; left:900px; top:170px; padding:auto;}
+.contact .copyright { position: absolute; top:30px; font-family: 'LotteMartDream'; font-size: 14px; font-weight: 300; color: #fff; }
+.inputbox .sendBtn{ background-color: #9398b6; color:#fff; padding:10px;}
+.contact_form .inputbox input{
+  height: auto;  /* 높이값 초기화 */
+  padding: .8em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
+  font-family: inherit;  /* 폰트 상속 */
+  margin-top:10px;
+  margin-bottom:10px;
+  border: 1px solid #999;
+  border-radius: 10;  /* iSO 둥근모서리 제거 */
+  text-align: left;
+ }
+ .message textarea{
+   width:450px;
+   height:150px;
+   background:white;
+   padding: .5em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
+   font-family: inherit;  /* 폰트 상속 */
+   margin-top:10px;
+   margin-bottom:10px;
+   border: 1px solid #999;
+   border-radius: 10;  /* iSO 둥근모서리 제거 */
+  }
+ .name input{ width:150px; margin-right:10px;}
+ .email input{ width:450px; }
+ .message textarea{ width:450px; }
+ .submitBtn{ width:100px; text-align: center; background-color: #9398b6; cursor:pointer;}
+
+.sub_contact{height:40%;}
+.sub_contact span{ font-family: inherit; font-size: 12px;}
+.subcontact_info{margin-top:50px;height:60%;}
+.subcontact_info .container{height:33%;}
+ .sub_contact_innerWrapper{ width:70%; height:60%; color:#fff; margin-top:50px;}
+ .sub_contact_innerWrapper div{height:}
+ .sub_contact_innerWrapper span{ width:100%; }
+.sub_contact_innerWrapper .container{ display:flex; margin-top:10px;}
+.sub_contact_innerWrapper .container img{margin-top:10px; }
+.sub_contact_innerWrapper .img{color:#9398b6; }
+.sub_contact_innerWrapper .container .wrap{ margin-left:30px;}
+.sub_contact_innerWrapper .container .wrap h4{margin:0;}
+.sub_contact_innerWrapper .container .wrap span{ font-size: 12px;}
 
 @media screen and (max-width: 1280px) { .wrap { width: 100%; height: 100%; }
   nav { width: 100%; height: 50px; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); }

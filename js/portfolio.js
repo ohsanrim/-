@@ -387,10 +387,13 @@ $("document").ready(function(){
          return false;
        });
        $('.trigger').on('click', function() {
-          $('.modal-wrapper').toggleClass('open');
+         $('.modal-wrapper').toggleClass('open');
          $('.page-wrapper').toggleClass('blur-it');
           return false;
        });
+     });
+     $("input").focus(function(){
+       alert("ㅁㄴㅇㅁㄴㄻ");
      });
 
 })

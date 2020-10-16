@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="웹퍼블리셔 김예주 포트폴리오">
-    <meta name="keywords" content="웹퍼블리셔,웹디자인,포트폴리오">
+    <meta name="description" content="웹개발자 곽하린, 포트폴리오">
+    <meta name="keywords" content="웹개발자 곽하린,포트폴리오">
     <meta name="robots" content="all">
 
     <title>웹퍼블리셔 곽하린 포트폴리오</title>
@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="css/imagehover.min.css">
     <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/hover.css">
 
     <!--csshake-->
     <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
@@ -32,13 +33,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/jquery.easing.compatibility.js"></script>
     <script src="js/progressbar.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
     <script src="js/jquery.ui.ipad.js"></script>
     <script src="js/portfolio.js"></script>
+
 </head>
 
 <body>
@@ -102,6 +104,24 @@
         <!-- skill -->
         <div class="skill section">
           <div class="height_wrap">
+            <div class="education_wrapper">
+              <div class="education info">
+                  <h1>EDUCATION</h1>
+                  <span id="educationDate">2020.09</span><br>
+                  <span>디지털컨버전스 기반 Spring 개발자 양성과정</span><br>
+                  <span id="educationDate">2020.03</span><br>
+                  <span>호서대학교 법경찰학과(졸업)</span>
+              </div>
+              <div class="certificate info">
+                  <h1>CERTIFICATE</h1>
+                  <span id="educationDate">2019.08</span><br>
+                  <span>TOEIC 625점</span><br>
+                  <span id="educationDate">2016.12</span><br>
+                  <span>MOS Excel</span><span class="certificate_ex">-Microsoft</span><br>
+                  <span id="educationDate">2016.10</span><br>
+                  <span>MOS PowerPoint</span><span class="certificate_ex">-Microsoft</span><br>
+              </div>
+            </div>
             <div class="skill_wrapper">
               <div class="skills info">
                   <h1>SKILLS</h1>
@@ -122,13 +142,7 @@
                      <img id="backImg"  src="https://www.logolynx.com/images/logolynx/23/2334e82ea682a206c57645eb95817e43.png">
                   </div>
               </div>
-              <div class="education info">
-                  <h1>EDUCATION</h1>
-                  <span id="educationDate">2020.09</span><br>
-                  <span>디지털컨버전스 기반 Spring 개발자 양성과정</span><br>
-                  <span id="educationDate">2020.03</span><br>
-                  <span>호서대학교 법경찰학과(졸업)</span>
-              </div>
+
             </div>
           </div>
 
@@ -320,25 +334,70 @@ summernote API 를 통한 글 작성 구현(map-plugIn 사용).<br>
             </div>
           </div>
         </div>
-        <!--        CONTACT-->
-        <div class="contact section">
-            <div class="height_wrap">
-                <h1>contact.</h1>
-                <ul class="address">
-                    <li>
-                        <p>openKakao</p>
-                        <a href="https://open.kakao.com/o/s5P9ehIb" target="_blank"><img src="images/openkakao.png" alt="오픈카카오QR코드"></a>
-                    </li>
-                    <li>
-                        <p>E-mail</p>
-                        <p>ka28@naver.com</p>
-                    </li>
-                </ul>
-                <img src="images/contact_1507.jpg" id="socks" alt="DO YOU KNOW 1507?">
-                <p class="copyright">Copyright ⓒ KWAKHARIN. All rights reserved.</p>
+    </div>
+    <!--        CONTACT-->
+    <div class="contact section">
+      <p class="copyright">Copyright ⓒ KWAKHARIN. All rights reserved.</p>
+        <div class="height_wrap">
+          <div class="contact_wrapper">
+            <div class="contact_innerWrapper">
+              <form class="contact_form" name="contactForm" method="post">
+                <h3>SEND ME A MESSAGE</h3>
+                <div class="inputbox name">
+                  <input type="text" name="firstName" placeholder="First Name"><input type="text" name="lastName" placeholder="Last Name">
+                </div>
+                <div class="inputbox email">
+                  <input type="text" name="email" placeholder="name@example.com">
+                </div>
+                <div class="inputbox message">
+                  <textarea type="text" name="message" placeholder="Send me a message"></textarea>
+                </div>
+                <div class="inputbox submitBtn hvr-pulse">
+                  <div class="sendBtn">SEND</div>
+                </div>
+              </form>
             </div>
+          </div>
+          <div class="sub_contact_wrapper">
+            <div class="sub_contact_innerWrapper">
+              <div class="sub_contact">
+                <h3>CONTACT ME</h3>
+                <span>궁금한 점이 있으시면 언제든 연락주시면 답변 드리겠습니다. 블로그에 저의 자세한 활동내역이 기록되어 있으니 많은 방문 부탁드립니다!</span>
+              </div>
+              <div class="subcontact_info">
+                <div class="phone container">
+                  <div class="phone img">
+                    <i id="img" class="fas fa-phone"></i>
+                  </div>
+                  <div class="phone wrap">
+                    <h4>PHONE</h4>
+                    <span>82+ 10-4319-7701</span>
+                  </div>
+                </div>
+                <div class="email container">
+                  <div class="email img">
+                    <i id="img" class="fas fa-envelope-open"></i>
+                  </div>
+                  <div class="email wrap">
+                    <h4>EMAIL</h4>
+                    <span>ka28@naver.com</span>
+                  </div>
+                </div>
+                <div class="blog container">
+                  <div class="blog img">
+                    <i id="img" class="fab fa-blogger"></i>
+                  </div>
+                  <div class="blog wrap">
+                    <h4>BLOG</h4>
+                    <span>www.blog.naver.com/ka28</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
+    <!---->
     <!-- Modal -->
   <div class="modal-wrapper">
     <div class="modal">
