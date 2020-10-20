@@ -27,13 +27,22 @@ $("document").ready(function(){
 
 
     //RESIZE EVENT
+    /*
     $(window).resize(function(){
+      if($(window).width() <1280) {
         height=$(this).height();
         $("html, body").stop().animate({
             scrollTop: height * count
         },1000)
+       }
     })
-
+*/
+  $(window).resize(function(){
+      height=$(this).height();
+      $("html, body").stop().animate({
+          scrollTop: height * count
+      },1000)
+  })
   function scrollevent(pos){
     //ASIDE EVENT
     var current=(pos / (height * 5));
@@ -55,8 +64,77 @@ $("document").ready(function(){
   }
     //WHEEL EVENT
     var wheeltime=false;
+    
+    //TOUCH SWIPE EVENT
+    $("body").swipe({
+        swipe: function(event, direction){
+            if(direction=="up"||direction=="left"){
+                if(count==2){
+                    wc++;
+                    if(wc>wwl) wc=wwl;
+                    //WEB PLAY
+                    $(".wrap .web .web_wrap .mockup li").eq(wc).addClass("select")
+                    $(".wrap .web .web_wrap .mockup li").eq(wc+1).removeClass("select")
+                    $(".wrap .web .web_wrap .txt li").hide().eq(wc).show()
+                    $(".wrap .web .web_wrap #link_guide li").hide().eq(wc).show()
+                    //WC OPTION
+                    if(wc==0){
+                        passup=true;
+                    }else{
+                        passup=false;
+                    }
+                    if(wc==wwl){
+                        setTimeout(function(){
+                            passdown=true;
+                        },1000)
+                    }else{
+                        passdown=false;
+                    }
+                    if(passdown==false) return;
+                }
+                count++;
+                if(count>4) count=4;
+            }else if(direction=="down"||direction=="right"){
+                if(count==2){
+                    wc--;
+                    if(wc<0) wc=0;
+                    //WEB PLAY
+                    $(".wrap .web .web_wrap .mockup li").eq(wc).addClass("select")
+                    $(".wrap .web .web_wrap .mockup li").eq(wc+1).removeClass("select")
+                    $(".wrap .web .web_wrap .txt li").hide().eq(wc).show()
+                    $(".wrap .web .web_wrap #link_guide li").hide().eq(wc).show()
+                    //WC OPTION
+                    if(wc==0){
+                        setTimeout(function(){
+                            passup=true;
+                        },1000)
+                    }else{
+                        passup=false;
+                    }
+                    if(wc==wwl){
+                        passdown=true;
+                    }else{
+                        passdown=false;
+                    }
+                    if(passup==false) return;
+                }
+                count--;
+                if(count<0) count=0;
+            }
+
+            //wheel count 값에 따른 scrollTop 지정
+            $("html, body").stop().animate({
+                scrollTop: height * count
+            },1000)
+
+            //NAV
+            $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
+        },
+        excludedElements: $(".guide")
+    });
 
     $(window).on("mousewheel DOMMousewheel",function(e){
+
       //pos값 제어
         var delta=e.originalEvent.wheelDelta;
 
@@ -101,6 +179,7 @@ $("document").ready(function(){
     })
 
 
+
     //KEY EVENT
     var keytime=false;
     $(window).keydown(function(e){
@@ -112,7 +191,7 @@ $("document").ready(function(){
         //40 : ↓
         //48~57 : left 0~9
         //96~105 : right 0~9
-
+      if($(window).width() >1280) {
         if(keytime==true){
             return;
         }
@@ -157,6 +236,7 @@ $("document").ready(function(){
         if(count==4){
           slideRight();
         }
+      }
     })
 
     //NAV CLICK EVENT
@@ -187,67 +267,7 @@ $("document").ready(function(){
           slideRight();
         }
     })
-
-    //GUIDE EVENT
-    var $web_guide=$(".wrap .web .web_wrap .guide"),
-        $design_guide=$(".wrap .design .guide"),
-        $design_orig=$(".wrap .design .orig");
-    function close_guide(){
-        $(".guide, .orig").fadeOut(500)
-        $(".guide li, .orig li").fadeOut(500)
-        $("html, body").off("scroll touchmove mousewheel")
-    }
-    function view_guide(guide,num){
-        $(guide).fadeIn(500).find("li").eq(num).fadeIn(500)
-    }
-    function prevent_scroll(){
-        $("html, body").on("scroll touchmove mousewheel", function(event){
-            event.preventDefault();
-            event.stopPropagation();
-            return false;
-        })
-    }
-    $("#link_guide li").click(function(){
-        var gidx=$(this).index();
-        view_guide($web_guide,gidx);
-        prevent_scroll();
-    })
-//    $("#design0").click(function(){
-//        view_guide($design_guide,0);
-//        prevent_scroll();
-//    })
-//    $("#design1").click(function(){
-//        view_guide($design_guide,1);
-//        prevent_scroll();
-//    })
-//    $("#design2").click(function(){
-//        view_guide($design_guide,2);
-//        prevent_scroll();
-//    })
-//    $("#orig0").click(function(){
-//        view_guide($design_orig,0);
-//        prevent_scroll();
-//    })
-//    $("#orig1").click(function(){
-//        view_guide($design_orig,1);
-//        prevent_scroll();
-//    })
-//    $("#orig2").click(function(){
-//        view_guide($design_orig,2);
-//        prevent_scroll();
-//    })
-    $(".close").click(function(){
-        close_guide();
-    })
-    $(".guide, .orig").click(function(){
-        close_guide();
-    })
-    $(".guide li, .orig li").click(function(e){
-        return false;
-    })
-    function mouseScrollStop(){
-
-    }
+    //로딩화면 꾸미기
     $(document).ready(function() {
       $('body').on('scroll touchmove mousewheel', function(e) {
          e.preventDefault();
@@ -284,17 +304,13 @@ $("document").ready(function(){
        scrollevent(pos);
 
      });
-     $('#selfie').click(function(){
-       //사진 클릭 시 팜업 띄우기
-     });
+
      //스크롤 시 div 나타나는 이펙트
      function divEvent(num){
        if(num==1) $("#scrollEvent1").fadeIn(3000);
-       if(num==2){
-
-       }
      }
      $(document).ready(function(){
+       //div 숨기기
        $("#slideLeft").css('opacity','0');
        $("#slideRight").css('opacity','0');
        $("#scrollEvent1").hide();
@@ -375,6 +391,4 @@ $("document").ready(function(){
          $message.val("");
        }
      });
-
-
 })
