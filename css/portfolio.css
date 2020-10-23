@@ -422,6 +422,30 @@ a.btn {
 }
 /* 모바일 버전 */
 @media screen and (max-width: 1280px) {
-  nav { width: 100%; height: 50px; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); }
-  nav li { width: 25%; height: 50px; line-height: 50px; text-align: center; float: left; }
+  nav { width: 100%; height: 50%; top: 0; left: 0; background-color: rgba(148, 153, 183, 0.5); }
+	nav ol{height:100%;margin:0; padding:0;width:100%;}
+  nav ol li{ margin:0 auto;display:flex;justify-content: center;align-items: center;margin-bottom:0px; width: 100%; height: 20%; line-height: 50px; text-align: center; float: left; color:#fff; }
   aside { width: 40px; height: 40px; bottom: 20px; right: 20px; }
+	.main .box span{ right:0; }
+	.mobile_bars{ position:absolute; cursor:pointer; left: 90%; top: 50px; z-index: 99;}
+	.about .height_wrap{ justify-content: center; }
+	.about .profile{ margin:0; width:80%;}
+	.about span{font-size: 14px;}
+	.education_wrapper, .skill_wrapper{ width:100%;height:auto; display:flex; }
+	.skill .height_wrap{display:block; padding-left: 5%; padding-right:5%;}
+	.skill .education, .skill .certificate{width:100%; height:20%; margin:0;}
+	.skill span { font-size: 15px; }
+	.skill .info{ width:80%; }
+	.education_wrapper .education{ width:40%; }
+	.education_wrapper .certificate{ width:30%; margin-left: 15%; }
+	.work1_wrapper,	.work2_wrapper{display:block;}
+	.work1 .work_info, .work2 .work_info{width:90%; height:auto;}
+	.work1 .design_container, .work2 .design_container{ width:90%; height:35%; }
+	.work1 .design_wrap, .work2 .design_wrap{ position:static; width:100%; height:100%}
+	.design_wrap li .mockup a img{ height:auto; width:100%;}
+	.work_ex{ font-size: 12px;}
+	.contact_wrapper{background-color: #fff;; width:80%; position:inherit; }
+
+	.contact .height_wrap{ height:70%; align-items: center; position:absolute;; display:block; }
+	.skill_design{font-size: 10px;}
+}

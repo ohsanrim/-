@@ -25,7 +25,8 @@ $("document").ready(function(){
         trailColor: "#c4bdc5"
     })
 
-
+    if($(window).width() >1280) { wideWindow(); }
+    else { smallSize(); }
     //RESIZE EVENT
     /*
     $(window).resize(function(){
@@ -37,12 +38,32 @@ $("document").ready(function(){
        }
     })
 */
+//모바일버전
+function smallSize(){
+  $('#selfie').hide();
+  $('.mobile_bars').show();
+  $('.sub_contact_wrapper').hide();
+}
+//인터넷 버전
+function wideWindow(){
+  $('#selfie').show();
+  $('.mobile_bars').hide();
+  $('.sub_contact_wrapper').show();
+}
   $(window).resize(function(){
       height=$(this).height();
       $("html, body").stop().animate({
           scrollTop: height * count
       },1000)
+      //햄버거 네비게이션
+      if($(window).width() >1280) { wideWindow(); }
+      else { smallSize(); }
+
   })
+  //모바일 네비바 클릭 시
+  $('.mobile_bars').click(function(){
+    $('nav').slideToggle();
+  });
   function scrollevent(pos){
     //ASIDE EVENT
     var current=(pos / (height * 5));
@@ -56,15 +77,18 @@ $("document").ready(function(){
     }
 
     //NAV HIDE SHOW EVENT
-    if(pos>=height){
-        $("nav").fadeIn(500)
-    }else{
-        $("nav").fadeOut(500)
+
+  if(pos>=height){
+    if($(window).width() >1280) {
+          $("nav").fadeIn(500);
     }
+  }else{
+          $("nav").fadeOut(500);
+  }
   }
     //WHEEL EVENT
     var wheeltime=false;
-    
+
     //TOUCH SWIPE EVENT
     $("body").swipe({
         swipe: function(event, direction){
